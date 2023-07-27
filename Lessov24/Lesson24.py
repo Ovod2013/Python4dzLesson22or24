@@ -13,3 +13,45 @@
 # заданной во входном файле грядки.
 
 # 3 1 2 4
+
+n = int(input("Введите количество кустов, не менее 3: "))
+
+kol=[] # создание списка количества ягод на кусте
+i=1
+while i<=n: # Заполнение урожайности кустов
+    yagod=int(input(f"Введите количество ягод на {i} кусте: "))
+    kol.append(yagod)
+    i+=1
+# Печать урожайности кустов для контроля
+print (f"Урожайность кустов: {kol}") 
+maxUrogay=0
+i=0
+pryamo=1
+levee=1
+pravee=1
+ocenkaSbora=0
+kust=1
+#urogay=[]
+while i<n:
+    if i==0:
+        pryamo=i
+        levee=n-1
+        pravee=i+1
+    elif i==(n-1):
+        pryamo=i
+        levee=i-1
+        pravee=0
+    else:
+        pryamo=i
+        levee=i-1
+        pravee=i+1
+    
+    ocenkaSbora=kol[levee]+kol[pryamo]+kol[pravee]
+    
+    if ocenkaSbora>maxUrogay:
+        maxUrogay=ocenkaSbora
+        kust=i
+    #print(pryamo, levee, pravee, ocenkaSbora, maxUrogay, i)    
+    i+=1
+
+print(f"Максимальное число ягод {maxUrogay} можно собрать, находясь перед {kust+1} кустом")

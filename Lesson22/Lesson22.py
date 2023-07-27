@@ -18,7 +18,7 @@ while i<=n: # Заполнение списка 1
     nabor1.append(element)
     i+=1
 
-print (nabor1) # Печать списков для котроля
+print (nabor1) # Печать списков для контроля
 i=1
 while i<=m: # Заполнение списка 2
     element=int(input(f"Введите {i} элемент второго набора чисел: "))
